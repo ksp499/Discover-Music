@@ -1,3 +1,11 @@
 .row {
 	margin: auto;
 }
+
+.panel-default>.panel-heading {
+	background-color: black;
+	color: white;
+}
+body {
+	background-image: "assets/images/keyboard.jpg";
+}
