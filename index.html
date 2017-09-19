@@ -1,34 +1,94 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en-us">
+
   <head>
-    <title>Discover Music!</title>
-
-	<!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- bootstrap -->
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>
-
-	<!-- css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us</title>
+    <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our own CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" media="screen">
   </head>
 
-  <body background="assets/images/background.jpg">
-    
-    <div class='container'>
+  <body>
+    <!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-12 phone-nav">
+              <a class="navbar-brand" id="logo">Music Finder</a>
+            </div>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li><a href="index.html">About Us</a></li>
+              <li><a href="videos.html">Watch Videos</a></li>
+              <li><a href="searchEvents.html">Search Concerts</a></li>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+          </div>
+          </div><!-- /.container-fluid -->
+        </nav>
+        <!-- End of navbar -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="..." alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="..." alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="..." alt="Third slide">
+            </div>
+          </div>
+        </div>
+        <!-- Start of content wrap -->
+        <div class="wrap">
+          <div class="container">
+            <section class="row">
+              <div class="col-md-6 col-md-offset-4">
+                <article class="about-me-content">
+                  <h1 class="about-me-header">About Us</h1>
+                  <hr class="about-me-hr"/>
+                  <p>Cupcake ipsum dolor sit. Amet tiramisu icing marshmallow bear claw. Biscuit jujubes bear claw. Lemon drops dessert chocolate bar cake pie pastry halvah jelly beans cupcake. Icing cheesecake sugar plum marshmallow. Brownie cupcake candy. Gummies toffee chocolate jelly gummies. Cookie cotton candy brownie powder oat cake sesame snaps biscuit lollipop. Wafer pie halvah muffin cupcake powder pie. Chocolate muffin danish sesame snaps chupa chups cotton candy. Chocolate bar chocolate bar lemon drops croissant jelly beans. Tart marzipan topping topping liquorice powder lemon drops.</p>
+                  <br />
+                  <p>Cupcake ipsum dolor sit. Amet tiramisu icing marshmallow bear claw. Biscuit jujubes bear claw. Lemon drops dessert chocolate bar cake pie pastry halvah jelly beans cupcake. Icing cheesecake sugar plum marshmallow. Brownie cupcake candy. Gummies toffee chocolate jelly gummies. Cookie cotton candy brownie powder oat cake sesame snaps biscuit lollipop. Wafer pie halvah muffin cupcake powder pie.</p>
+                </article>
+              </div>
+              <div class="col-md-4">
+              </div>
+            </section>
+          </div>
+        </div>
+        <!-- End of content wrap -->
 
-    <!-- jumbotron for app title -->
-		<div class='jumbotron' style='text-align: center; background-color: #000; color: #fff'>
-			<h1>Discover Music</h1>
-		</div>
+        <!-- Start of footer -->
+        <footer class="footer">
+          <div class="two-toned-footer-color"></div>
+          <p class="text-muted text-muted-footer text-center">
+            &copy; Copyright 2017 Group 6
+          </p>
+        </footer>
+        <!-- End of footer -->
 
-    <!-- Description of this project -->
-    <div class="panel panel-default">
-      <div class="panel-heading"><h2>About Us</h2></div>
-      <div class="panel-body">
-      		<h3 class = "description">This page is designed to make enjoying music a little easier. If you want to find a concert, you can use this site to look for local concerts by putting in your zip code. Once you have a list of nearby shows, you can put the band names into the other search bar to find videos of the groups. We have also included a feature to save search results in order for you to see what performers are popular. We hope this site helps you find a great show!</h3>
-      </div>
-    </div>
+        <!-- jQuery CDN -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Bootstrap CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  </body>
-</html>
+      </body>
+      
+    </html>
