@@ -6,7 +6,10 @@ $(document).ready(function() {
 	// ticketmaster api request
 	$('#city-search').on('click', function(event){
 		event.preventDefault();
+
 		var city = $('#city-name').val().trim();
+
+		$('#employee-table').html("");
 		$('#city-name').val('');
 		var key = "Od7j5mMr30CGAReRYE4XKAfiULRQvEDW";
 		var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&size=10&apikey="+key+"&city="+city;

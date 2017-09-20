@@ -16,6 +16,12 @@ bottom: 0;
 h1 {
 text-align: center;
 }
+#myCarousel {
+	margin-top: 200px;
+}
+.holder {
+	text-align: center;
+}
 .btn {
 border-radius: 4px;
 background-color: black;
