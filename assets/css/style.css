@@ -1,11 +1,33 @@
-.row {
-	margin: auto;
-}
-
-.panel-default>.panel-heading {
-	background-color: black;
-	color: white;
+h3 {
+text-align: center;
 }
 body {
-	background-image: "assets/images/keyboard.jpg";
+background-color: black;
+color: white;
+}
+form {
+text-align: center;
+}
+footer {
+position: absolute;
+width: 100vw;
+bottom: 0;
+}
+h1 {
+text-align: center;
+}
+.btn {
+border-radius: 4px;
+background-color: black;
+color: white;
+border: 2px solid white;
+}
+.btn:hover {
+border-radius: 4px;
+background-color: #202020;
+color: white;
+border: 2px solid white;
+}
+page-header {
+text-align: center;
 }

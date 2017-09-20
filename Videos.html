@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Videos</title>
     <!-- Boostrap Stylesheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/youtubeApi.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-inverse bg-inverse">
@@ -32,34 +34,32 @@
             <ul class="nav navbar-nav navbar-right navbar-right-custom">
               <li><a href="index.html">Home</a></li>
               <li><a href="aboutUs.html">About Us</a></li>
-              <li><a href="videos.html">Watch Videos</a></li>
-              <li><a href="maps.html">Search Concerts</a></li>
+              <li><a href="videos.html">Watch Videos </a></li>
+              <li><a href="maps.html">Search Concerts </a></li>
             </ul>
             </div><!-- /.navbar-collapse -->
           </div>
           </div><!-- /.container-fluid -->
         </nav>
         <!-- End of navbar -->
-        <!-- Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="assets/smoke.jpg" height="200px" width="300px" alt="First slide">
+        <!-- Youtube -->
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="page-header">
+                <h1>Search For Videos Below</h1>
               </div>
-              <h1>Find out more about the creaters of Music Finder</h1>
-              <a class="btn btn-primary" href="aboutUs.html" role="button">Click Here</a>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="assets/smoke2.jpg" height="200px" width="300px" alt="Second slide">
-              </div><h1>Watch music videos</h1>
-              <a class="btn btn-primary" href="aboutUs.html" role="button">Click Here</a>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="assets/smoke3.jpg" height="200px" width="300px" alt="Third slide">
+          <section>
+            <form id="searchForm" name="searchForm" onsubmit="return search()">
+              <div class="fieldContainer" style="color: black">
+                <input type="search" id="query" class="searchField" placeholder="Search YouTube...">
+                <input type="submit" name="searchBtn" id="searchBtn" value="submit">
               </div>
-              <h1>Find concerts in your area</h1>
-              <a class="btn btn-primary" href="aboutUs.html" role="button">Click Here</a>
-            </div>
-          </div>
-          <!-- End of carousel -->
+            </form>
+            <ul id="results"></ul>
+            <div id="buttons"></div>
+          </section>
+          <!-- End of Youtube -->
           <!-- Footer -->
           <footer class="footer">
             <div class="two-toned-footer-color"></div>
