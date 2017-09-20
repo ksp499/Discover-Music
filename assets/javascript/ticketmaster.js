@@ -13,8 +13,10 @@ $(document).ready(function() {
 		var events_container = [];
 		var event = {
 			name: "",
+			genre: "",
 			location: "",
-			date: ""
+			date: "",
+			url: ""
 		};
 
 		$.ajax({
@@ -28,11 +30,13 @@ $(document).ready(function() {
 
 			for (var i = 0; i < 10; i++) {
 				event.name = response._embedded.events[i].name;
+				event.genre = response._embedded.events[i].classifications[0].genre.name;
 				event.location = response._embedded.events[i]._embedded.venues[0].name;
 				event.date = response._embedded.events[i].dates.start.localDate+ " " +response._embedded.events[i].dates.start.localTime;
+				event.url = response._embedded.events[i].url;
 				events_container.push(event);
 				console.log(events_container[i]);
-				$('#employee-table').append("<div class='row' style='border-bottom: 1px solid #ccc; padding-bottom: 5px; font-weight: bold; color: black'><div class='col-xs-5'>"+event.name+"</div><div class='col-xs-5'>"+event.location+"</div><div class='col-xs-2'>"+event.date+"</div></div>");
+				$('#employee-table').append("<div class='row' style='border-bottom: 1px solid #ccc; padding-bottom: 5px; font-weight: bold; color: black'><div class='col-xs-5'><a href='"+event.url+"'>"+event.name+"</a></div><div class='col-xs-2'>"+event.genre+"</div><div class='col-xs-3'>"+event.location+"</div><div class='col-xs-2'>"+event.date+"</div></div>");
 			}
 
 		});
