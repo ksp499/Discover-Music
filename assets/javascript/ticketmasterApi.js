@@ -32,7 +32,7 @@ $(document).ready(function() {
 			console.log(response);
 
 			for (var i = 0; i < 10; i++) {
-				event.name = response._embedded.events[i].name;
+				event.name = response._embedded.events[i]._embedded.attractions[0].name;
 				event.genre = response._embedded.events[i].classifications[0].genre.name;
 				event.location = response._embedded.events[i]._embedded.venues[0].name;
 				event.date = response._embedded.events[i].dates.start.localDate+ " " +response._embedded.events[i].dates.start.localTime;
