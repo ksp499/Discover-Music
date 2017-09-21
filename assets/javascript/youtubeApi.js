@@ -21,6 +21,7 @@
   var name_array = [];
   var count_array = [];
 
+  // Populate the most-view table
   database.ref().orderByChild('count').once("value").then(function(snapshot) {
     snapshot.forEach(function(child) {
       name_array.push(child.val().name);
@@ -35,6 +36,7 @@
     }
   });
 
+  // When the search button was clicked
   $("#searchBtn").on("click", function(event) {
     event.preventDefault();
     
