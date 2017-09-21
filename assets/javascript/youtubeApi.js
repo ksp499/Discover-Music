@@ -17,19 +17,66 @@
   // Initial Values
   var band_name = "";
   var count = 0;
+  var checker = false;
+  var name_array = [];
+  var count_array = [];
+
+
+
+
+  console.log(name_array);
+  console.log(count_array);
+
+
+
+  database.ref().orderByChild('count').once("value").then(function(snapshot) {
+    snapshot.forEach(function(child) {
+      name_array.push(child.val().name);
+      count_array.push(child.val().count);
+      console.log(child.val().name);
+    });
+  });
+
+
+
 
   $("#searchBtn").on("click", function(event) {
     event.preventDefault();
     
     search();
 
-    console.log("what");
+    $('#view_table').html("");
 
     band_name = $("#query").val().trim();
 
-    database.ref().push({
-      name: band_name
+    var query = database.ref().orderByKey();
+    query.once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        if (childSnapshot.val().name == band_name) {
+          checker = true;
+          childSnapshot.ref.update({
+            count: parseInt(childSnapshot.val().count) + 1
+          });
+          
+        }
+      });
+      if (checker == false) {
+        console.log("stop");
+        database.ref().push({
+          name: band_name,
+          count: 1
+        });
+      } 
     });
+    checker = false;
+
+
+
+    var ind = 1;
+    for (var i = name_array.length-1; i >= name_array.length-5; i--)  {
+     $('#view_table').append("<div class='row' style='color:black'>"+ind+". "+name_array[i]+"</div>");
+     ind++;
+    }
 
   }); 
 
@@ -167,7 +214,7 @@ function getOutput(item) {
   '<img src="'+thumb+'">' +
   '</div>' +
   '<div class="list-right">' +
-  '<h3><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/'+videoId+'">'+title+'</a></h3>' +
+  '<h3><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/'+videoId+'" data-lightbox-title="Youtube">'+title+'</a></h3>' +
   '<small>By <span class="cTitle">'+channelTitle+'</span> on '+videoDate+'</small>' +
   '<p>'+description+'</p>' +
   '</div>' +
@@ -184,12 +231,12 @@ function getButtons(prevPageToken, nextPageToken) {
  if (!prevPageToken) {
   var btnoutput = '<div class="button-container">' +
   '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
-  'onclick="nextPage();">Next Page</button></div>';
+  'onclick="nextPage();">Next</button></div>';
 
  } else {
   var btnoutput = '<div class="button-container">' +
   '<button style="color:black" id="prev-button" class = "paging-button" data-token="'+prevPageToken+'" data-query = "'+q+'"' +
-  'onclick="prevPage();">Previous Page</button>' +
+  'onclick="prevPage();">Back</button>' +
 
   '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
   'onclick="nextPage();">Next Page</button></div>';

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Videos</title>
+  <!-- lightbox plugin -->
+  <script src="assets/lightboxPlugin/responsive/responsive.ie10mobilefix.min.js"></script>
+  <link href="assets/lightboxPlugin/responsive/responsive.min.css" rel="stylesheet" />
   <!-- Boostrap Stylesheet -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Our own CSS stylesheet -->
@@ -62,12 +65,21 @@
           <div id="buttons"></div>
         </section>
       </div>
+      <div class="col-xs-2"></div>
+      <div class="col-xs-2" style="margin-top: 50px">
+        <div class="panel panel-default" style="font-weight: bold;">
+          <div class="panel-heading" >Most Searched</div>
+          <div class="panel-body" id="view_table">
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
   
   <!-- End of Youtube -->
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer2">
     <div class="two-toned-footer-color"></div>
     <p class="text-muted text-muted-footer text-center">
       &copy; Copyright 2017 Group 6
