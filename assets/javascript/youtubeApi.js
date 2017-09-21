@@ -234,12 +234,12 @@ function getButtons(prevPageToken, nextPageToken) {
  if (!prevPageToken) {
   var btnoutput = '<div class="button-container">' +
   '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
-  'onclick="nextPage();">Next</button></div>';
+  'onclick="nextPage();">Next Page</button></div>';
 
  } else {
   var btnoutput = '<div class="button-container">' +
-  '<button style="color:black" id="prev-button" class = "paging-button" data-token="'+prevPageToken+'" data-query = "'+q+'"' +
-  'onclick="prevPage();">Back</button>' +
+  '<button style="color:black; margin-right: 10px" id="prev-button" class = "paging-button" data-token="'+prevPageToken+'" data-query = "'+q+'"' +
+  'onclick="prevPage();">Back Page</button>' +
 
   '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
   'onclick="nextPage();">Next Page</button></div>';

@@ -20,6 +20,7 @@ bottom: 0;
 }
 h1 {
 text-align: center;
+padding-bottom: 50px;
 }
 #myCarousel {
 	margin-top: 50px;
