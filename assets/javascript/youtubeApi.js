@@ -1,5 +1,3 @@
-//AIzaSyA4IxfmVK42CAkBnacp1Hqg-sZwJToDkz8
-
 //collect data for firebase
 
   // Initialize Firebase
@@ -22,6 +20,8 @@
 
   $("#searchBtn").on("click", function(event) {
     event.preventDefault();
+    
+    search();
 
     console.log("what");
 
@@ -32,37 +32,6 @@
     });
 
   }); 
-
-
-//searchbar handler
-$(function() {
-  var searchField = $('#query');
-  var icon =$('#searchBtn');
-
-  //focus event handler this is just some animation for the search bar. completely unnecessary but you can add it back if you like it.
-  /*$(searchField).on('focus', function() {
-    $(this).animate({
-      width: "100%"
-    }, 400);
-    $(icon).animate({
-      right: '10px'
-    }, 400);
-  })
-  //blur event handler
-  $(searchField).on('focus', function() {
-    if(searchField.val() === '') {
-      $(searchField).animate({
-        width: '45%'
-      }, 400, function() {});
-      $(icon).animate({
-        right: '360px'
-      }, 400, function() {});
-    }
-  });*/
-  $('#searchForm').submit(function(e) {
-    e.preventDefault();
-  });
-})
 
 function search() {
   //clear results
@@ -214,15 +183,15 @@ function getOutput(item) {
 function getButtons(prevPageToken, nextPageToken) {
  if (!prevPageToken) {
   var btnoutput = '<div class="button-container">' +
-  '<button id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
+  '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
   'onclick="nextPage();">Next Page</button></div>';
 
  } else {
   var btnoutput = '<div class="button-container">' +
-  '<button id="prev-button" class = "paging-button" data-token="'+prevPageToken+'" data-query = "'+q+'"' +
+  '<button style="color:black" id="prev-button" class = "paging-button" data-token="'+prevPageToken+'" data-query = "'+q+'"' +
   'onclick="prevPage();">Previous Page</button>' +
 
-  '<button id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
+  '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
   'onclick="nextPage();">Next Page</button></div>';
 
  }

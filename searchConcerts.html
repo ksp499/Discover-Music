@@ -10,7 +10,6 @@
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" media="screen">
   </head>
-
   <body>
     <nav class="navbar navbar-inverse bg-inverse">
       <div class="container-fluid navbar-custom">
@@ -41,21 +40,23 @@
           </div><!-- /.container-fluid -->
         </nav>
         <!-- End of navbar -->
-
         <!-- Maps -->
         <!-- search nearby concerts div -->
+        <div class="container">
           <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6">
               <div class="page-header">
                 <h1>Search For Concerts</h1>
               </div>
-                <form id="search-form" style="color: black; margin-bottom: 20px" onsubmit="return search()">
-                  <input type="text" id="city-name" placeholder="Search City ...">
-                  <input id="city-search" type="submit" value="submit">
-                </form>
+              <form id="search-form" style="color: black; margin-bottom: 20px" onsubmit="return search()">
+                <input type="text" id="city-name" placeholder="Search City ...">
+                <input id="city-search" type="submit" value="submit">
+              </form>
             </div>
           </div>
-
+          </div>
+      
         <div class='row'>
           <div class="panel panel-primary" style="width: 80%; margin: auto">
             <div class="panel-body">
@@ -66,14 +67,10 @@
                 <div class='col-xs-2'>Date</div>
               </div>
               <div id='employee-table'></div>
-
             </div>
           </div>
         </div>
-
-
         <!-- End of maps -->
-
         <!-- Footer -->
         <footer class="footer">
           <div class="two-toned-footer-color"></div>
@@ -82,7 +79,6 @@
           </p>
         </footer>
         <!-- End of footer -->
-
         <!-- jQuery CDN -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Bootstrap CDN -->
