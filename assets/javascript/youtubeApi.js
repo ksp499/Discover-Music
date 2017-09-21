@@ -21,24 +21,19 @@
   var name_array = [];
   var count_array = [];
 
-
-
-
-  console.log(name_array);
-  console.log(count_array);
-
-
-
   database.ref().orderByChild('count').once("value").then(function(snapshot) {
     snapshot.forEach(function(child) {
       name_array.push(child.val().name);
       count_array.push(child.val().count);
       console.log(child.val().name);
     });
+
+    var ind = 1;
+    for (var i = name_array.length-1; i >= name_array.length-5; i--)  {
+     $('#view_table').append("<div class='row' style='color:black'>"+ind+". "+name_array[i]+"</div>");
+     ind++;
+    }
   });
-
-
-
 
   $("#searchBtn").on("click", function(event) {
     event.preventDefault();
@@ -57,7 +52,7 @@
           childSnapshot.ref.update({
             count: parseInt(childSnapshot.val().count) + 1
           });
-          
+
         }
       });
       if (checker == false) {
@@ -70,13 +65,19 @@
     });
     checker = false;
 
+    database.ref().orderByChild('count').once("value").then(function(snapshot) {
+      snapshot.forEach(function(child) {
+        name_array.push(child.val().name);
+        count_array.push(child.val().count);
+        console.log(child.val().name);
+      });
 
-
-    var ind = 1;
-    for (var i = name_array.length-1; i >= name_array.length-5; i--)  {
-     $('#view_table').append("<div class='row' style='color:black'>"+ind+". "+name_array[i]+"</div>");
-     ind++;
-    }
+      var ind = 1;
+      for (var i = name_array.length-1; i >= name_array.length-5; i--)  {
+       $('#view_table').append("<div class='row' style='color:black'>"+ind+". "+name_array[i]+"</div>");
+       ind++;
+      }
+    });
 
   }); 
 
