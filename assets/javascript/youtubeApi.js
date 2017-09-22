@@ -233,15 +233,15 @@ function getOutput(item) {
 function getButtons(prevPageToken, nextPageToken) {
  if (!prevPageToken) {
   var btnoutput = '<div class="button-container">' +
-  '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
+  '<button style="color:white" id="next-button" class = "btn btn-info paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
   'onclick="nextPage();">Next Page</button></div>';
 
  } else {
   var btnoutput = '<div class="button-container">' +
-  '<button style="color:black; margin-right: 10px" id="prev-button" class = "paging-button" data-token="'+prevPageToken+'" data-query = "'+q+'"' +
+  '<button style="color:white; margin-right: 10px" id="prev-button" class = "btn btn-info paging-button" data-token="'+prevPageToken+'" data-query = "'+q+'"' +
   'onclick="prevPage();">Back Page</button>' +
 
-  '<button style="color:black" id="next-button" class = "paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
+  '<button style="color:white" id="next-button" class = "btn btn-info paging-button" data-token="'+nextPageToken+'" data-query = "'+q+'"' +
   'onclick="nextPage();">Next Page</button></div>';
 
  }
