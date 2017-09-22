@@ -43,3 +43,6 @@ border: 2px solid white;
 page-header {
 text-align: center;
 }
+::-webkit-input-placeholder { /* Chrome */
+  color: black;
+}
